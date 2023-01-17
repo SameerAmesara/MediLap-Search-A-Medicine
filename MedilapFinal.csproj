@@ -1,0 +1,631 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50E6F0ED-11DE-4A69-9D7F-FCC54D593820}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedilapFinal</RootNamespace>
+    <AssemblyName>MedilapFinal</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44352</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.6\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.6\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="Activate.aspx" />
+    <Content Include="App_Data\Medbase.mdf" />
+    <Content Include="App_Data\Medbase_log.ldf">
+      <DependentUpon>Medbase.mdf</DependentUpon>
+    </Content>
+    <Content Include="assets\css\animate.min.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\default.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\jquery.css" />
+    <Content Include="assets\css\jquery.dataTables.css" />
+    <Content Include="assets\css\jquery.dataTables.min.css" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\MapStyleSheet.css" />
+    <Content Include="assets\css\responsive.dataTables.css" />
+    <Content Include="assets\css\slick.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\fa-brands-400.html" />
+    <Content Include="assets\fonts\fa-light-300.html" />
+    <Content Include="assets\fonts\fa-regular-400.html" />
+    <Content Include="assets\fonts\fa-solid-900.html" />
+    <Content Include="assets\images\a6105f2351783c6df7e6f3efa60d588f.jpg" />
+    <Content Include="assets\images\about-brand-1.png" />
+    <Content Include="assets\images\about-brand-2.png" />
+    <Content Include="assets\images\about-brand-3.png" />
+    <Content Include="assets\images\about-thumb-10.png" />
+    <Content Include="assets\images\about-thumb-2.png" />
+    <Content Include="assets\images\about-thumb-3.png" />
+    <Content Include="assets\images\about-thumb-4.png" />
+    <Content Include="assets\images\about-thumb-5.png" />
+    <Content Include="assets\images\about-thumb-9.png" />
+    <Content Include="assets\images\about-thumb.jpg" />
+    <Content Include="assets\images\about-thumb.png" />
+    <Content Include="assets\images\admin.jpg" />
+    <Content Include="assets\images\article-1.jpg" />
+    <Content Include="assets\images\article-2.jpg" />
+    <Content Include="assets\images\article-3.jpg" />
+    <Content Include="assets\images\article-4.png" />
+    <Content Include="assets\images\article-5.png" />
+    <Content Include="assets\images\article-6.png" />
+    <Content Include="assets\images\article-thumb-1.png" />
+    <Content Include="assets\images\article-thumb-2.png" />
+    <Content Include="assets\images\article-thumb-3.png" />
+    <Content Include="assets\images\article-thumb-4.png" />
+    <Content Include="assets\images\banner-thumb-5.png" />
+    <Content Include="assets\images\brand-1.png" />
+    <Content Include="assets\images\brand-2.png" />
+    <Content Include="assets\images\brand-3.png" />
+    <Content Include="assets\images\brand\fun-facts-1.png" />
+    <Content Include="assets\images\brand\fun-facts-2.png" />
+    <Content Include="assets\images\brand\fun-facts-3.png" />
+    <Content Include="assets\images\brand\item-1.png" />
+    <Content Include="assets\images\brand\item-2.png" />
+    <Content Include="assets\images\brand\item-3.png" />
+    <Content Include="assets\images\brand\item-4.png" />
+    <Content Include="assets\images\case-thumb.jpg" />
+    <Content Include="assets\images\case.png" />
+    <Content Include="assets\images\client-bg.jpg" />
+    <Content Include="assets\images\company-bg.jpg" />
+    <Content Include="assets\images\contact-us-bg.jpg" />
+    <Content Include="assets\images\contact-us-bg.png" />
+    <Content Include="assets\images\doc.png" />
+    <Content Include="assets\images\doc2.png" />
+    <Content Include="assets\images\doca.png" />
+    <Content Include="assets\images\doca2.png" />
+    <Content Include="assets\images\email.svg" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\gallery-1.png" />
+    <Content Include="assets\images\gallery-2.png" />
+    <Content Include="assets\images\gallery-3.png" />
+    <Content Include="assets\images\gallery-4.png" />
+    <Content Include="assets\images\gallery-5.png" />
+    <Content Include="assets\images\gallery-6.png" />
+    <Content Include="assets\images\hero-bg-14.jpg" />
+    <Content Include="assets\images\hero-bg.jpg" />
+    <Content Include="assets\images\hero-case-7.png" />
+    <Content Include="assets\images\icon\arrow.png" />
+    <Content Include="assets\images\icon\email-2.png" />
+    <Content Include="assets\images\icon\footer-icon-1.png" />
+    <Content Include="assets\images\icon\footer-icon-2.png" />
+    <Content Include="assets\images\icon\footer-icon-3.png" />
+    <Content Include="assets\images\icon\footer-icon-4.png" />
+    <Content Include="assets\images\icon\footer-icon-5.png" />
+    <Content Include="assets\images\icon\footer-icon-6.png" />
+    <Content Include="assets\images\icon\footer-newsletter-dot.png" />
+    <Content Include="assets\images\icon\fun-facts-1.png" />
+    <Content Include="assets\images\icon\fun-facts-2.png" />
+    <Content Include="assets\images\icon\fun-facts-3.png" />
+    <Content Include="assets\images\icon\fun-facts-4.png" />
+    <Content Include="assets\images\icon\header-dot.png" />
+    <Content Include="assets\images\icon\hero-icon-1.png" />
+    <Content Include="assets\images\icon\hero-icon-2.png" />
+    <Content Include="assets\images\icon\hero-icon.png" />
+    <Content Include="assets\images\icon\phone-2.png" />
+    <Content Include="assets\images\icon\planing-1.png" />
+    <Content Include="assets\images\icon\planing-2.png" />
+    <Content Include="assets\images\icon\planing-3.png" />
+    <Content Include="assets\images\icon\planing-4.png" />
+    <Content Include="assets\images\icon\planing-5.png" />
+    <Content Include="assets\images\icon\portfolio-arrow-2.png" />
+    <Content Include="assets\images\icon\portfolio-arrow.png" />
+    <Content Include="assets\images\icon\post-icon-1.png" />
+    <Content Include="assets\images\icon\post-icon-2.png" />
+    <Content Include="assets\images\icon\quote-2.png" />
+    <Content Include="assets\images\icon\quote-3.png" />
+    <Content Include="assets\images\icon\quote-icon.png" />
+    <Content Include="assets\images\icon\quote.png" />
+    <Content Include="assets\images\icon\service-icon-1.png" />
+    <Content Include="assets\images\icon\service-icon-2.png" />
+    <Content Include="assets\images\icon\service-icon-3.png" />
+    <Content Include="assets\images\icon\service-icon-4.png" />
+    <Content Include="assets\images\icon\service-icon-5.png" />
+    <Content Include="assets\images\icon\service-icon-6.png" />
+    <Content Include="assets\images\icon\sub-1.png" />
+    <Content Include="assets\images\icon\sub-2.png" />
+    <Content Include="assets\images\icon\sub-3.png" />
+    <Content Include="assets\images\location.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\medicine.png" />
+    <Content Include="assets\images\overview-1.png" />
+    <Content Include="assets\images\overview-2.png" />
+    <Content Include="assets\images\overview-3.png" />
+    <Content Include="assets\images\overview-4.png" />
+    <Content Include="assets\images\page-bg-2.jpg" />
+    <Content Include="assets\images\page-bg-3.jpg" />
+    <Content Include="assets\images\page-bg-4.jpg" />
+    <Content Include="assets\images\page-bg-5.jpg" />
+    <Content Include="assets\images\page-bg-6.jpg" />
+    <Content Include="assets\images\page-bg.jpg" />
+    <Content Include="assets\images\portfolio-1.png" />
+    <Content Include="assets\images\portfolio-2.png" />
+    <Content Include="assets\images\portfolio-3.png" />
+    <Content Include="assets\images\portfolio-4.png" />
+    <Content Include="assets\images\portfolio-details-thumb-1.png" />
+    <Content Include="assets\images\portfolio-details-thumb-2.png" />
+    <Content Include="assets\images\portfolio-details-thumb.png" />
+    <Content Include="assets\images\portfolio\portfolio-1.png" />
+    <Content Include="assets\images\portfolio\portfolio-2.png" />
+    <Content Include="assets\images\portfolio\portfolio-3.png" />
+    <Content Include="assets\images\portfolio\portfolio-4.png" />
+    <Content Include="assets\images\portfolio\portfolio-5.png" />
+    <Content Include="assets\images\portfolio\portfolio-6.png" />
+    <Content Include="assets\images\portfolio\portfolio-7.png" />
+    <Content Include="assets\images\portfolio\portfolio-8.png" />
+    <Content Include="assets\images\portfolio\portfolio-9.png" />
+    <Content Include="assets\images\portfolio\portfolio-item-1.png" />
+    <Content Include="assets\images\portfolio\portfolio-item-2.png" />
+    <Content Include="assets\images\portfolio\portfolio-item-3.png" />
+    <Content Include="assets\images\portfolio\portfolio-item-4.png" />
+    <Content Include="assets\images\portfolio\portfolio-item-5.png" />
+    <Content Include="assets\images\portfolio\portfolio-item-6.png" />
+    <Content Include="assets\images\portfolio\portfolio-item-7.png" />
+    <Content Include="assets\images\portfolio\portfolio-item-8.png" />
+    <Content Include="assets\images\portfolio\portfolio-item-9.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-1.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-10.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-11.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-12.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-13.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-14.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-15.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-16.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-17.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-18.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-19.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-2.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-20.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-21.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-22.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-23.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-24.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-25.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-26.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-27.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-28.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-3.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-4.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-5.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-6.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-7.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-8.png" />
+    <Content Include="assets\images\portfolio\portfolio-style-9.png" />
+    <Content Include="assets\images\post-arrow.png" />
+    <Content Include="assets\images\post-news-1.png" />
+    <Content Include="assets\images\post-news-2.png" />
+    <Content Include="assets\images\post-news-3.png" />
+    <Content Include="assets\images\post-news-4.png" />
+    <Content Include="assets\images\post-thumb-1.png" />
+    <Content Include="assets\images\post-thumb-2.png" />
+    <Content Include="assets\images\pricing-arrow-3.png" />
+    <Content Include="assets\images\pricing-arrow-4.png" />
+    <Content Include="assets\images\pricing-dot.png" />
+    <Content Include="assets\images\project-2.png" />
+    <Content Include="assets\images\project-3.png" />
+    <Content Include="assets\images\project-4.png" />
+    <Content Include="assets\images\project-5.png" />
+    <Content Include="assets\images\project-6.png" />
+    <Content Include="assets\images\project-7.png" />
+    <Content Include="assets\images\project-8.png" />
+    <Content Include="assets\images\project-line.png" />
+    <Content Include="assets\images\project\project-1.png" />
+    <Content Include="assets\images\project\project-2.png" />
+    <Content Include="assets\images\project\project-3.png" />
+    <Content Include="assets\images\project\project-4.png" />
+    <Content Include="assets\images\project\project-5.png" />
+    <Content Include="assets\images\project\project-6.png" />
+    <Content Include="assets\images\project\project-7.png" />
+    <Content Include="assets\images\project\project-8.png" />
+    <Content Include="assets\images\services-item-2.png" />
+    <Content Include="assets\images\user.png" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\dataTables.responsive.js" />
+    <Content Include="assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="assets\js\isotope.pkgd.min.js" />
+    <Content Include="assets\js\jquery.appear.min.js" />
+    <Content Include="assets\js\jquery.dataTables.min.js" />
+    <Content Include="assets\js\jquery.magnific-popup.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\slick.min.js" />
+    <Content Include="assets\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="assets\js\vendor\modernizr-3.6.0.min.js" />
+    <Content Include="A_Dashboard.aspx" />
+    <Content Include="A_login.aspx" />
+    <Content Include="A_Store_list.aspx" />
+    <Content Include="A_Store_Management.aspx" />
+    <Content Include="A_User_list.aspx" />
+    <Content Include="A_User_Management.aspx" />
+    <Content Include="contact.aspx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="MapMedicine.aspx" />
+    <Content Include="PreOrderMail.html" />
+    <Content Include="SearchMedicine.aspx" />
+    <Content Include="S_AddMedicine.aspx" />
+    <Content Include="S_Dashboard.aspx" />
+    <Content Include="S_Edit-Profile.aspx" />
+    <Content Include="S_MedicineInventory.aspx" />
+    <Content Include="S_SignUp.aspx" />
+    <Content Include="S_UpdateStock.aspx" />
+    <Content Include="U_Dashboard.aspx" />
+    <Content Include="U_Edit-Profile.aspx" />
+    <Content Include="U_Login.aspx" />
+    <Content Include="U_MapMedicine.aspx" />
+    <Content Include="U_SearchMedicine.aspx" />
+    <Content Include="U_SignUp.aspx" />
+    <Content Include="U_YourMedicine.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Activate.aspx.cs">
+      <DependentUpon>Activate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activate.aspx.designer.cs">
+      <DependentUpon>Activate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="A_Dashboard.aspx.cs">
+      <DependentUpon>A_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_Dashboard.aspx.designer.cs">
+      <DependentUpon>A_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A_login.aspx.cs">
+      <DependentUpon>A_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_login.aspx.designer.cs">
+      <DependentUpon>A_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A_Store_list.aspx.cs">
+      <DependentUpon>A_Store_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_Store_list.aspx.designer.cs">
+      <DependentUpon>A_Store_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A_Store_Management.aspx.cs">
+      <DependentUpon>A_Store_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_Store_Management.aspx.designer.cs">
+      <DependentUpon>A_Store_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A_User_list.aspx.cs">
+      <DependentUpon>A_User_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_User_list.aspx.designer.cs">
+      <DependentUpon>A_User_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A_User_Management.aspx.cs">
+      <DependentUpon>A_User_Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A_User_Management.aspx.designer.cs">
+      <DependentUpon>A_User_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapMedicine.aspx.cs">
+      <DependentUpon>MapMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapMedicine.aspx.designer.cs">
+      <DependentUpon>MapMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchMedicine.aspx.cs">
+      <DependentUpon>SearchMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchMedicine.aspx.designer.cs">
+      <DependentUpon>SearchMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store.Master.cs">
+      <DependentUpon>Store.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store.Master.designer.cs">
+      <DependentUpon>Store.Master</DependentUpon>
+    </Compile>
+    <Compile Include="S_AddMedicine.aspx.cs">
+      <DependentUpon>S_AddMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S_AddMedicine.aspx.designer.cs">
+      <DependentUpon>S_AddMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S_Dashboard.aspx.cs">
+      <DependentUpon>S_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S_Dashboard.aspx.designer.cs">
+      <DependentUpon>S_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S_Edit-Profile.aspx.cs">
+      <DependentUpon>S_Edit-Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S_Edit-Profile.aspx.designer.cs">
+      <DependentUpon>S_Edit-Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S_MedicineInventory.aspx.cs">
+      <DependentUpon>S_MedicineInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S_MedicineInventory.aspx.designer.cs">
+      <DependentUpon>S_MedicineInventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S_SignUp.aspx.cs">
+      <DependentUpon>S_SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S_SignUp.aspx.designer.cs">
+      <DependentUpon>S_SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S_UpdateStock.aspx.cs">
+      <DependentUpon>S_UpdateStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S_UpdateStock.aspx.designer.cs">
+      <DependentUpon>S_UpdateStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="U_Dashboard.aspx.cs">
+      <DependentUpon>U_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Dashboard.aspx.designer.cs">
+      <DependentUpon>U_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Edit-Profile.aspx.cs">
+      <DependentUpon>U_Edit-Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Edit-Profile.aspx.designer.cs">
+      <DependentUpon>U_Edit-Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_Login.aspx.cs">
+      <DependentUpon>U_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_Login.aspx.designer.cs">
+      <DependentUpon>U_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="U_MapMedicine.aspx.cs">
+      <DependentUpon>U_MapMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_MapMedicine.aspx.designer.cs">
+      <DependentUpon>U_MapMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_SearchMedicine.aspx.cs">
+      <DependentUpon>U_SearchMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_SearchMedicine.aspx.designer.cs">
+      <DependentUpon>U_SearchMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_SignUp.aspx.cs">
+      <DependentUpon>U_SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_SignUp.aspx.designer.cs">
+      <DependentUpon>U_SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="U_YourMedicine.aspx.cs">
+      <DependentUpon>U_YourMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="U_YourMedicine.aspx.designer.cs">
+      <DependentUpon>U_YourMedicine.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\fonts\fa-brands-400.eot" />
+    <Content Include="assets\fonts\fa-brands-400.ttf" />
+    <Content Include="assets\fonts\fa-brands-400.woff" />
+    <Content Include="assets\fonts\fa-brands-400.woff2" />
+    <Content Include="assets\fonts\fa-brands-400d41d.eot" />
+    <Content Include="assets\fonts\fa-light-300.eot" />
+    <Content Include="assets\fonts\fa-light-300.ttf" />
+    <Content Include="assets\fonts\fa-light-300.woff" />
+    <Content Include="assets\fonts\fa-light-300.woff2" />
+    <Content Include="assets\fonts\fa-light-300d41d.eot" />
+    <Content Include="assets\fonts\fa-regular-400.eot" />
+    <Content Include="assets\fonts\fa-regular-400.ttf" />
+    <Content Include="assets\fonts\fa-regular-400.woff" />
+    <Content Include="assets\fonts\fa-regular-400.woff2" />
+    <Content Include="assets\fonts\fa-regular-400d41d.eot" />
+    <Content Include="assets\fonts\fa-solid-900.eot" />
+    <Content Include="assets\fonts\fa-solid-900.ttf" />
+    <Content Include="assets\fonts\fa-solid-900.woff" />
+    <Content Include="assets\fonts\fa-solid-900.woff2" />
+    <Content Include="assets\fonts\fa-solid-900d41d.eot" />
+    <Content Include="assets\fonts\spacegrotesk-bold-webfont.woff" />
+    <Content Include="assets\fonts\spacegrotesk-bold-webfont.woff2" />
+    <Content Include="assets\fonts\spacegrotesk-light-webfont.woff" />
+    <Content Include="assets\fonts\spacegrotesk-light-webfont.woff2" />
+    <Content Include="assets\fonts\spacegrotesk-medium-webfont.woff" />
+    <Content Include="assets\fonts\spacegrotesk-medium-webfont.woff2" />
+    <Content Include="assets\fonts\spacegrotesk-regular-webfont.woff" />
+    <Content Include="assets\fonts\spacegrotesk-regular-webfont.woff2" />
+    <Content Include="assets\fonts\spacegrotesk-semibold-webfont.woff" />
+    <Content Include="assets\fonts\spacegrotesk-semibold-webfont.woff2" />
+    <Content Include="assets\images\user.eps" />
+    <Content Include="Admin.Master" />
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="User.Master" />
+    <Content Include="Store.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58085</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44352/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

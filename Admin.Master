@@ -1,0 +1,242 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="MedilapFinal.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MediLap</title>
+
+    <!-- css Files -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/default.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="assets/css/slick.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="assets/css/responsive.dataTables.css" rel="stylesheet" />
+    <!-- css Files -->
+
+    <!-- js Files -->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.responsive.js"></script>
+    <!-- js Files -->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!--Header Area-->
+        <header class="header-area">
+            <div class="header-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="navigation">
+                                <nav class="navbar navbar-expand-lg navbar-light ">
+                                    <a class="navbar-brand" href="index.aspx">
+                                        <img src="assets/images/logo.png" alt=""></a>
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="toggler-icon"></span>
+                                        <span class="toggler-icon"></span>
+                                        <span class="toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item active">
+                                                <asp:LinkButton class="nav-link" ID="LinkButton" runat="server" OnClick="LinkButton_Click">Home</asp:LinkButton>
+                                            </li>
+                                            <li class="nav-item active">
+                                                <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">About</asp:LinkButton>
+                                            </li>
+                                            <li class="nav-item active">
+                                                <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Contact</asp:LinkButton>
+                                            </li>
+                                            <li class="nav-item active">
+                                                <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Dashboard</asp:LinkButton>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="navbar-btn d-none d-lg-block ml-auto">
+                                        <asp:LinkButton class="main-btn" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">Logout<i class="fa fa-sign-out" aria-hidden="true"></i></asp:LinkButton>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--Header Area-->
+
+        <!--Breadcrumb-->
+        <div class="page-title-area2">
+            <div class="section__bg"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-title-content2 text-center">
+                            <h3 class="title">Admin Dashboard</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Breadcrumb-->
+
+        <section class="contact-us-area contact-us-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="contact-us-box">
+                            <center>
+                        <div class="row">
+                            <div class="col">
+                                <center>
+                                    <img width="125px" src="assets/images/user.png" />
+                                </center>
+                            </div>
+                        </div>
+                        <h2 class="title"><asp:LinkButton ID="LinkButton6" runat="server" /></h2>
+                        <br />
+                        <div class="row">
+                            <div class="col">
+                                <center>
+                                   <h3>Functionalities</h3>
+                                </center>
+                            </div>
+                        </div>
+                    </center>
+                            <br />
+
+                            <div class="row no-gutters">
+                                <div class="col-lg-12">
+                                    <div class="input-box mt-10">
+                                        <asp:LinkButton class="main-btn btn-block" ID="LinkButton11" runat="server" Font-Size="Large" OnClick="LinkButton11_Click">User Management</asp:LinkButton>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="input-box mt-10">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="input-box mt-10">
+                                        <asp:LinkButton class="main-btn btn-block" ID="LinkButton12" runat="server" Font-Size="Large" OnClick="LinkButton12_Click">Medical Store Management</asp:LinkButton>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="input-box mt-10">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="input-box mt-10">
+                                        <asp:LinkButton class="main-btn btn-block" ID="LinkButton13" runat="server" Font-Size="Large" OnClick="LinkButton13_Click">User List</asp:LinkButton>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="input-box mt-10">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="input-box mt-10">
+                                        <asp:LinkButton class="main-btn btn-block" ID="LinkButton14" runat="server" Font-Size="Large" OnClick="LinkButton14_Click">Medical Store List</asp:LinkButton>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="input-box mt-10">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="contact-us-box">
+                            <div>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Footer Area-->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-top d-block d-sm-flex  justify-content-between align-items-center">
+                            <div class="footer-logo">
+                                <a href="#">
+                                    <img src="assets/images/logo.png" alt=""></a>
+                            </div>
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-item">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="footer-about mt-30">
+                                <h4 class="title">MediLap</h4>
+                                <p>No need to visit different stores to find medicines. Find the exact location of Medical store having your required Medicine in your city with <font color="Red">MediLap</font>. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="footer-info mt-30">
+                                <h3 class="title">Categories</h3>
+                                <ul>
+                                    <li><i class="fal fa-map-marker-alt"></i>Kalabhavan, Rajmahal Road, Nr. Kirtistambh, Vadodara, Gujarat 390001 </li>
+                                    <li><i class="fal fa-phone"></i> Sameer Amesara : +91 81605 42972 </li>
+                                    <li><i class="fal fa-phone"></i> Soham Patel : +91 99095 99185 </li>
+                                    <li><i class="fal fa-envelope"></i>info.medilap007@gmail.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-copyright">
+                            <center><p>Copyright @ 2020. Designed and Handled by <asp:LinkButton ID="LinkButton5" runat="server" >Sameer & Soham</asp:LinkButton></p></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Footer Area-->
+
+        <a class="back-to-top">
+            <i class="fal fa-angle-up"></i>
+        </a>
+
+    </form>
+</body>
+</html>
